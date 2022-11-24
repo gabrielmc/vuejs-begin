@@ -4,14 +4,16 @@
     <hr />
     <FormTodo v-on:add-todo="addComment"></FormTodo>
     <div class="list-group">
-    <p v-if="comments.length <= 0">Sem comentários...</p>
-    <div v-else class="list-group-item" v-for="(comment, index) in allComments" v-bind:key="index">
-        <span class="comment__author">Autor: <strong>{{ comment.name }}</strong></span>
-        <p>{{ comment.message }}</p>
-        <div>
-        <a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir</a>
+        <p v-if="comments.length <= 0">Sem comentários...</p>
+        <div v-else class="list-group-item" v-for="(comment, index) in allComments" v-bind:key="index">
+            <span class="comment__author">
+                Autor: <strong>{{ comment.name }}</strong>
+            </span>
+            <p>{{ comment.message }}</p>
+            <div>
+                <a href="#" title="Excluir" v-on:click.prevent="removeComment(index)">Excluir</a>
+            </div>
         </div>
-    </div>
     </div>
     <hr />
   </div>
